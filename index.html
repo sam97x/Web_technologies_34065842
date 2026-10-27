@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> The Whisky Page| A single malt database</title>
+    <link rel="stylesheet" href="styles.css">
+</head>    
+<body>
+    <a href="#main-content" class="skip-link"> Skip to main content</a>
+    <header class="app-header">
+        <div class="header-container">
+            <div class="brand-logo">
+                <span aria-hidden="true">🥃 </span>
+                <h1> WhiskyVault</h1>
+            </div>
+            <button class="nav-toggle" id="navToggleBtn" aria-label="Toggle menu" aria-expanded="false"></button>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="#catalog" class="nav-link active">Catalog</a></li>
+                    <li><a href="#submit-note" class="nav-link">Submit Note</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="hero-banner">
+            <h2> Explore Global Single Malt Whiskies</h2>
+            <p> Filter through our selection of 24 bottles spanning  Scottish and Japanese whisky distillers </p>
+        </section>
+
+        <section id="catalog" class="catalog-section">
+            <h2 class="section-title"> Whisky Database</h2>
+
+            <form id="whiskySearchForm" class="search-form" role="search">
+                <div class="form-group">
+                    <label for="searchInput"> Search the Name or Flavour of a bottle</label>
+                    <div class="search-input-wrapper">
+                        <input type="search" id="searchInput" placeholder="eg. Hakushu, Smoke..." autocomplete="off">
+
+                    </div>
+                </div>
+
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="regionSelect">Regions</label>
+                        <select id="regionSelect">
+                            <option value="all">All of the regions</option>
+                            <option value="Japan">Japanese</option>
+                            <option value="Speyside">Speyside</option>
+                            <option value="Highland">Highland</option>
+                            <option value="Islay">Islay</option>
+                            <option value=" Campbeltown">Campbeltown</option>
+                            <option value="Lowland"> Lowland </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="priceRange">Maximum Price: <strong id="priceDisplay">£350</strong></label>
+                        <input type="range" id="priceRange" min="40" max="350" step="10" value="350">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sortBy"> Sort By</label>
+                        <select id="sortBy">
+                            <option value ='name-asc'> Name(A-Z) </option>
+                            <option value="price-asc"> Price (low-high)</option>
+                            <option value="price-desc"> Price(high-low) </option>
+                        </select>
+                    </div>   
+                </div>
+                <button type="button" id="resetFiltersBtn" class=" btn btn-secondary"> Reset Filters</button>
+            </form>
+            
+            <div id="statusMessage" aria-live="polite"></div>
+            <div id="whiskyGrid" class="whisky-grid"></div>
+        </section>
+        
+        <div id="whiskyModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="modal-overlay" id="modalOverlay"></div>
+            <div class="modal-content">
+                <button id="closeModalBtn" class="modal-close-btn" aria-label="Close">&times;</button> 
+                <div id="modalBody"></div>
+            </div>
+        </div>
+
+        <section id="submit-note" class="submission-section">
+            <div class="form-container">
+                <h2 class="section-title"> Submit some community tasting notes</h2>
+                <form id="tastingNoteForm" novalidate>
+                    <div class="form-group">
+                        <label for="userName">Your Name <span class="required">*</span></label>
+                        <input type="text" id="userName" required minlength="2">
+                        <span class="error-text" id="userNameError" aria-live="polite"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="whiskySelect"> Select Whisky <span class="required">*</span></label>
+                        <select id="whiskySelect" required><option value="">Choose </option></select>
+                        <span class="error-text" id="whiskySelectError" aria-live="polite"></span>
+                    </div>
+
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="userRating"> Rating (1-10)</label>
+                            <input type="number" id="userRating" min="1" max="10" value="10" required>
+                        </div>    
+                        <div class="form-group">
+                            <label for="purchaseDate"> Date </label>
+                            <input type="date" id="purchaseDate">
+                        </div>    
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="tastingNotesText"> Notes <span class="required">*</span></label>
+                        <textarea id="tastingNotesText" rows="3" required minlength="5"></textarea>
+                        <span class="error-text" id="notesError" aria-live="polite"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary"> Submit Review</button>
+                    <div id="formSuccessMessage" class="form-success hidden" role="alert"></div>
+                </form>    
+            </div>            
+        </section>
+    </main>          
+    
+    <footer class="app-footer">
+        <p>&copy; The Whisky Vault, Samuel Morton's Web Technologies submission.</p>
+
+    </footer>
+
+
+    <script src="app.js" defer></script>
+</body>
+</html>
+
+
+        
+
+               
+
+                    
+
+                    
+
+                   
+
+
+                    
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+    
+</body>
+</html>

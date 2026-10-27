@@ -1,0 +1,231 @@
+:root{
+    --primary: #1d1a45;
+    --secondary: #f33535;
+    --bg-pale: #dbeaf1;
+    --white: #ffffff;
+    --text: #2b2d42;
+    --border:  #cad2c5;
+    --error: #d90429;
+    
+}
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;   
+}
+body{
+    font-family:'Times New Roman', Times, serif;
+    background-color: var(--bg-pale);
+    color: var(--text);
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main{flex: 1;}
+
+.skip-link{
+    position: absolute;
+    top: -40px;
+    left:10px;
+    background: var(--secondary);
+    color: var(--white);
+    padding: 6px 12px;
+    z-index: 1000;
+    text-decoration: none;
+    font-weight: bold;
+}
+.skip-link:focus {top: 10px;}
+
+a:focus-visible, button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{ outline: 3px solid var(--secondary); outline-offset: 2px;}
+
+.app-header {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 1rem;
+    position: sticky;
+    top:0; 
+    z-index: 100
+}
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.brand-logo{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.brand-logo h1{
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+.nav-toggle{
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+
+}
+.nav-toggle{
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.main-nav{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--primary);
+    padding: 1rem;
+}
+.main-nav.active {display:block;}
+.main-nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+.nav-link{
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+
+}    
+.nav-link:hover, nav-link.active{color: var(--secondary);}
+
+
+
+.hero-banner{
+    background: var(--primary);
+    color: var(--white);
+    padding: 2rem 1rem; 
+    text-align: center;
+}
+.hero-banner h2{
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.catalog-section, .submission-section{
+    max-width: 1000px;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+    width: 100%;
+}
+.section-title{
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--secondary);
+    display: inline-block;
+    padding-bottom: 0.25rem;
+}
+
+.search-form, .form-container{
+    background: var(--white);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba (0,0,0,0,1); 
+    margin-bottom: 1.5rem;
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.75rem;
+}
+.form-group label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+    color: var(--primary);
+}
+
+input [type = 'search'], input[type= 'text'], input[type= 'number'], input[type = 'date'], select, textarea{
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+.search-input-wrapper{
+    display: flex;
+    gap: 0.5rem;
+}    
+.search-input-wrapper input [type= 'search']{flex:1;}
+input[type ='range']{
+    width: 100%; accent-color: var(--secondary);
+}
+
+.form-row{ 
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;    
+}
+.btn{
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.btn-primary{
+    background-color: var(--secondary);
+    color: var(--white);
+}
+.btn-secondary{
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.whisky-grid{display: grid; grid-template-columns: 1fr; gap: 1rem;}
+.whisky-card {background: var(--white); padding: 1rem; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 2px 4px rgba(0,0,0,0,1); }
+.card-image-wrapper{ height: 200px;  background: #f4f7f8; position: relative;}
+.card-image-wrapper img{width: 100%; height:100%; object-fit: cover;}
+.badge-region{position: absolute; top: 8px; right: 8px; background: var(--primary); color: var(--white); font-size: 0.75rem; padding: 3px 6px; border-radius: 4px; font-weight: bold;} 
+.card-content{padding: 1rem; display: flex; flex-direction: column; flex:1}
+.card-title{font-size: 1.1rem; color: var(--primary); margin-bottom: 0.4rem;}
+.card-meta{ display: flex; justify-content: space-between; font-size: 0.8rem; color: #5c677d; font-weight: bold; margin-bottom: 0.5rem;}
+.card-price{ color: var(--secondary); font-weight: bold; margin-bottom: 0.5rem;}
+.tag-list{display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.75rem;}
+.tag{background: var(--bg-pale); color: var(--primary); font-size: 0.75rem; padding: 2px 6px; border-radius: 8px;}
+.card-content .btn{margin-top:auto; width:100%}
+
+
+.modal{position: fixed; top:0; left:0; width:100vw; height: 100vh; z-index:200; display: flex; align-items: center; justify-content: center; padding: 1rem;;}
+.modal-overlay {position: absolute; width:100%; height:100%; background: rgba(30,25,70,0,7);}
+.modal-content{position: relative; background: var(--white); border-radius: 8px; max-width: 500px; width: 100%; padding: 1rem; z-index:210;}
+.modal-close-btn{position: absolute; top: 8px;  top:10px; right: 15px; background: none; border: none; font-size: 1.5rem; cursor: pointer;} 
+
+.required{color: var(--secondary);}
+.error-text{color: var(--error); font-size: 0.8rem; margin-top: 0.2rem;}
+.form-group.invalid input, .form-group.invalid select, .form-group.invalid textarea{border-color: var(--error); background: #fff8e8;}
+.form-success {margin-top: 0.75rem; padding:0.75rem; background: #d4edda; color:#2b9349; border-radius: 4px; font-weight: bold;}
+.hidden{ display: none !important;}
+
+.app-footer{background-color: var(--primary); color: var(--white); padding: 1rem; text-align: center; margin-top: 2rem;}
+
+@media (min-width: 500px){
+    .whisky-grid{grid-template-columns: repeat(2,1fr);}
+    .form-row{flex-direction: row;}
+    .form-row .form-group{flex:1;}
+
+}
+@media (min-width: 750px){
+    .nav-toggle{display: none;}
+    .main-nav{display: block; position: static; background: none; padding:0;}
+    .main-nav ul{flex-direction: row; gap: 1.5rem;}
+    .whisky-grid{grid-template-columns: repeat(3,1fr);}
+}
